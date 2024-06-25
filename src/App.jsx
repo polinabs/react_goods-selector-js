@@ -20,6 +20,7 @@ const DEFAULT_SELECTED_GOOD = 'Jam';
 
 export const App = () => {
   const [selectedGood, setSelectedGood] = useState(DEFAULT_SELECTED_GOOD);
+  const reset = () => setSelectedGood(null);
 
   return (
     <main className="section container">
@@ -30,7 +31,7 @@ export const App = () => {
             data-cy="ClearButton"
             type="button"
             className="delete ml-3"
-            onClick={() => setSelectedGood(null)}
+            onClick={reset}
           />
         )}
       </h1>
@@ -60,7 +61,7 @@ export const App = () => {
                     data-cy="RemoveButton"
                     type="button"
                     className="button is-info"
-                    onClick={() => setSelectedGood(null)}
+                    onClick={reset}
                   >
                     -
                   </button>
